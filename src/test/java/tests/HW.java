@@ -191,17 +191,18 @@ public class HW {
         // 1. Открыть браузер и перейти на тестируемую страницу!
         ChromeDriver driver = new ChromeDriver();
         driver.get(URL3);
-
+/*
         // Способ укладки ламината.
         WebElement wayElement = driver.findElement(By.xpath("calc-sel"));
         Select wayDropDown = new Select(wayElement);
 
         wayDropDown.selectByVisibleText("со смещение на 1/3 длины");
-
+*/
         // 2. Ввести длину комнаты.
         WebElement roomLength = driver.findElement(By.id("ln_room_id"));
+        roomLength.clear();
         roomLength.sendKeys(roomLengthValue);
-
+/*
         // 3. Ввести ширину комнаты.
         WebElement roomWidth = driver.findElement(By.id("wd_room_id"));
         roomWidth.sendKeys(roomWidthValue);
@@ -235,7 +236,7 @@ public class HW {
         // 7. Нажать на кнопку 'Рассчитать'.
         WebElement calculate = driver.findElement(By.cssSelector("input[type = 'button']"));
         calculate.click();
-
+*/
 
         Thread.sleep(15000);
         driver.quit();
