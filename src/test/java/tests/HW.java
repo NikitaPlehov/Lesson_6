@@ -250,8 +250,8 @@ public class HW {
         WebElement calculate = driver.findElement(By.xpath("//a[@href='javascript:void(0);']"));
         calculate.click();
 
-        String actualLm = driver.findElement(By.id("txtMDRD")).getText();
-        String actualnumberLm = driver.findElement(By.id("txtMDRD1")).getText();
+        String actualLm = driver.findElement(By.cssSelector("div[style*='text-align:center; font-size:16px;']")).getText();
+        String actualnumberLm = driver.findElement(By.cssSelector("div[style*='text-align:center; font-size:16px;']")).getText();
 
 
         Assert.assertEquals(actualLm, expectedLm, "Количество досок разное");
