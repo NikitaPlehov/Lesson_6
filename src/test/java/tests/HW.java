@@ -250,8 +250,8 @@ public class HW {
         WebElement calculate = driver.findElement(By.xpath("//a[@href='javascript:void(0);']"));
         calculate.click();
 
-        String actualLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[1]")).getText();
-        String actualnumberLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[2]")).getText();
+        String actualLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[1]")).getText(); // метод Copy-xpath(по-другому не смог найти)
+        String actualnumberLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[2]")).getText();// метод Copy-xpath(по-другому не смог найти)
 
 
         Assert.assertEquals(actualLm, expectedLm, "Количество досок разное");
