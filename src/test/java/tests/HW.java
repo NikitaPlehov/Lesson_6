@@ -1,11 +1,14 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class HW {
 
@@ -184,6 +187,8 @@ public class HW {
         String minLengthValue = "250";
         String indentValue = "10";
 
+        String expectedLm = "Требуемое количество досок ламината: 53";
+        String expectednumberLm = "Количество упаковок ламината: 7";
 
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -191,52 +196,67 @@ public class HW {
         // 1. Открыть браузер и перейти на тестируемую страницу!
         ChromeDriver driver = new ChromeDriver();
         driver.get(URL3);
-/*
-        // Способ укладки ламината.
-        WebElement wayElement = driver.findElement(By.xpath("calc-sel"));
-        Select wayDropDown = new Select(wayElement);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // время ожидания до 20 сек.
 
-        wayDropDown.selectByVisibleText("со смещение на 1/3 длины");
-*/
+
         // 2. Ввести длину комнаты.
         WebElement roomLength = driver.findElement(By.id("ln_room_id"));
         roomLength.clear();
         roomLength.sendKeys(roomLengthValue);
-/*
+
         // 3. Ввести ширину комнаты.
         WebElement roomWidth = driver.findElement(By.id("wd_room_id"));
+        roomWidth.clear();
         roomWidth.sendKeys(roomWidthValue);
 
         // 4. Длина панели ламината.
         WebElement panelLength = driver.findElement(By.id("ln_lam_id"));
+        panelLength.clear();
         panelLength.sendKeys(panelLengthValue);
 
         // 5. Ширина панели ламината.
         WebElement panelWidth = driver.findElement(By.id("wd_lam_id"));
+        panelWidth.clear();
         panelWidth.sendKeys(panelWidthValue);
 
         // 6. Число панелей в упаковке.
         WebElement number = driver.findElement(By.id("n_packing"));
+        number.clear();
         number.sendKeys(numberValue);
+
+        // Способ укладки ламината.
+        WebElement wayElement = driver.findElement(By.id("laying_method_laminate"));
+        Select wayDropDown = new Select(wayElement);
+        wayDropDown.selectByValue("2");
 
         // 7. Минимальная длина обрезка.
         WebElement minLength = driver.findElement(By.id("min_length_segment_id"));
+        minLength.clear();
         minLength.sendKeys(minLengthValue);
 
         // 8. Отступ от стен.
         WebElement indent = driver.findElement(By.id("indent_walls_id"));
+        indent.clear();
         indent.sendKeys(indentValue);
 
 
         // Направление укладки ламината.
-        WebElement directionElement = driver.findElement(By.id("direction-laminate-id1"));
-        Select directionDropDown = new Select(directionElement);
-        directionDropDown.selectByValue("2");
+        WebElement directionElement = driver.findElement(By.cssSelector("label[for = 'direction-laminate-id1']"));
+        directionElement.click();
+
 
         // 7. Нажать на кнопку 'Рассчитать'.
-        WebElement calculate = driver.findElement(By.cssSelector("input[type = 'button']"));
+        WebElement calculate = driver.findElement(By.xpath("//a[@href='javascript:void(0);']"));
         calculate.click();
-*/
+
+        String actualLm = driver.findElement(By.id("txtMDRD")).getText();
+        String actualnumberLm = driver.findElement(By.id("txtMDRD1")).getText();
+
+
+        Assert.assertEquals(actualLm, expectedLm, "Количество досок разное");
+        Assert.assertEquals(actualnumberLm, expectednumberLm, "Количество упаковок разное");
+
 
         Thread.sleep(15000);
         driver.quit();
