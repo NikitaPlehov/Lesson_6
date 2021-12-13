@@ -16,15 +16,11 @@ public class HW {
     static String URL2 = "https://masterskayapola.ru/kalkulyator/laminata.html";
     static String URL3 = "https://calc.by/building-calculators/laminate.html";
 
-
-
-
     @Test
     public void homework_test2() throws InterruptedException {
         String widthValue = "5";
         String lengthValue= "7";
         String heatLossValue = "20";
-
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
@@ -43,16 +39,11 @@ public class HW {
         // 4. Выбрать помещение.
         WebElement premisesElement = driver.findElement(By.id("room_type"));
         Select  premisesDropDown = new Select(premisesElement);
-
-        // 4 варианта:
-        // premisesDropDown.selectByIndex(1);
         premisesDropDown.selectByValue("2");
-        // premisesDropDown.selectByVisibleText("Кухня или спальня");
 
         // 5. Выбрать типа обогрева.
         WebElement typeElement = driver.findElement(By.id("heating_type"));
         Select  typeDropDown = new Select(typeElement);
-
         typeDropDown.selectByValue("2");
 
         // 6. Ввести теплопотери.
@@ -66,20 +57,17 @@ public class HW {
         // 8. Проверить результат.
 
         WebElement resultValue = driver.findElement(By.id("floor_cable_power"));
-
         String resultStr = resultValue.getAttribute("value");
         if (!resultStr.equals("21")){
             System.out.println("Некорректное значение");
         }
 
         WebElement result1Value = driver.findElement(By.id("spec_floor_cable_power"));
-
         String result1Str = result1Value.getAttribute("value");
         if (!result1Str.equals("1")){
             System.out.println("Некорректное значение");
         }
 
-        Thread.sleep(10000);
         driver.quit();
 
     }
@@ -136,7 +124,6 @@ public class HW {
             // 8. Направление укладки.
             WebElement directionElement = driver.findElement(By.name("calc_direct"));
             Select  directionDropDown = new Select(directionElement);
-
             directionDropDown.selectByVisibleText("По ширине комнаты");
 
             // 9. Смещение рядов.
@@ -166,9 +153,7 @@ public class HW {
             Assert.assertEquals(actualOver, expectedOver, "Различные");
             Assert.assertEquals(actualTrash, expectedTrash, "Различные");
 
-
-
-        Thread.sleep(25000);
+            Thread.sleep(25000);
             driver.quit();
     }
 
@@ -190,7 +175,6 @@ public class HW {
         String expectedLm = "Требуемое количество досок ламината: 53";
         String expectednumberLm = "Количество упаковок ламината: 7";
 
-
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
         // 1. Открыть браузер и перейти на тестируемую страницу!
@@ -198,7 +182,6 @@ public class HW {
         driver.get(URL3);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // время ожидания до 20 сек.
-
 
         // 2. Ввести длину комнаты.
         WebElement roomLength = driver.findElement(By.id("ln_room_id"));
@@ -240,11 +223,9 @@ public class HW {
         indent.clear();
         indent.sendKeys(indentValue);
 
-
         // Направление укладки ламината.
         WebElement directionElement = driver.findElement(By.cssSelector("label[for = 'direction-laminate-id1']"));
         directionElement.click();
-
 
         // 7. Нажать на кнопку 'Рассчитать'.
         WebElement calculate = driver.findElement(By.xpath("//a[@href='javascript:void(0);']"));
@@ -253,15 +234,11 @@ public class HW {
         String actualLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[1]")).getText(); // метод Copy-xpath(по-другому не смог найти)
         String actualnumberLm = driver.findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[3]/div[2]/div[2]")).getText();// метод Copy-xpath(по-другому не смог найти)
 
-
         Assert.assertEquals(actualLm, expectedLm, "Количество досок разное");
         Assert.assertEquals(actualnumberLm, expectednumberLm, "Количество упаковок разное");
-
 
         Thread.sleep(15000);
         driver.quit();
 
-
     }
-
 }
