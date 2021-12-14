@@ -45,17 +45,22 @@ public class xPathSelectors {
     private static String path2_1 = "//ul/child::li";
     private static String path2_2 = "//ul/li";   //аналог только проще.
 
-    // Использование descendant - все предки текущего узла не зависят от уровня.
+    // Использование descendant - все предки текущего узла не зависимо от уровня.
     private static String path3_1 = "//ul/descendant::span";
     private static String path3_2 = "//ul//span";   //аналог только проще.
 
     // Использование following - выбираем всё в документе после закрытия тэга текущего узла.
-    private static String path4_1 = "//label[@for='announcement']/following::div";
-    private static String path4_2 = "private static String path4_2 = '(//label[@for='announcement']/following::div/*[@class='checkbox'])[1]';";
+    private static String path4_1 = "//label[@for='announcement']/following::form";
+    private static String path4_2 = "(//label[@for='announcement']/following::div/*[@class='checkbox'])[1]';";
 
-    // Использование following-sibling - выбирают все узлы  от уровня после текущего узла.
-    private static String path5_1 = "//label[@for='announcement']/following::div";
+    // Использование following-sibling - Выбирает все узлы одного уровня после текущего узла.
+    private static String path5_1 = "//label[@for='announcement']/following-sibling::div";
 
+    //Использование preceding - Выбирает все узлы, которые появляются перед текущим узлом в документе
+    private static String path6_1 = "//label[@for='announcement']/preceding::div";
+
+    //Использование preceding-sibling - Выбирает все узлы одного уровня до текущего узла
+    private static String path7_1 = "//label[@for='announcement']/preceding-sibling::div";
 
 
 
