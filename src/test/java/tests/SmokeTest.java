@@ -11,8 +11,6 @@ public class SmokeTest extends BaseTest {
     public void loginTest(){
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.getEmailField().sendKeys(ReadProperties.getUsername());
-        loginPage.getPasswordField().sendKeys(ReadProperties.getPassword());
-        loginPage.getLoginButton().click();
+        loginPage.login(ReadProperties.getUsername(), ReadProperties.getPassword());
     }
 }

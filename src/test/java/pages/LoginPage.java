@@ -24,9 +24,7 @@ public class LoginPage extends BasePage {
     }
 
     // Реализация гетерров элементов
-    public WebElement getEmailField(){
-        return driver.findElement(email_Selector);
-    }
+    public WebElement getEmailField(){return driver.findElement(email_Selector);}
      public WebElement getPasswordField(){
         return driver.findElement(password_Selector);
     }
@@ -39,8 +37,8 @@ public class LoginPage extends BasePage {
     public void login(String username, String password){
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.getEmailField().sendKeys(ReadProperties.getUsername());
-        loginPage.getPasswordField().sendKeys(ReadProperties.getPassword());
-        loginPage.getLoginButton().click();
+        getEmailField().sendKeys(ReadProperties.getUsername());
+        getPasswordField().sendKeys(ReadProperties.getPassword());
+        getLoginButton().click();
     }
 }
