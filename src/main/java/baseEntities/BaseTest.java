@@ -10,8 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-
-
 public class BaseTest {
     protected WebDriver driver;
 
@@ -25,7 +23,6 @@ public class BaseTest {
                 chromeOptions.addArguments("--disable-gpu");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.setHeadless(ReadProperties.getHeadless());
-               // chromeOptions.addArguments("--start-maximized");
 
                 driver = new ChromeDriver(chromeOptions);
                 break;
@@ -43,7 +40,8 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(30000);
         driver.quit();
     }
 }
