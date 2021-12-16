@@ -26,9 +26,7 @@ public class LoginPage extends BasePage {
 
     // Реализация гетерров элементов
     public WebElement getEmailField(){return driver.findElement(email_Selector);}
-    public WebElement getPasswordField(){
-        return driver.findElement(password_Selector);
-    }
+    public WebElement getPasswordField(){return driver.findElement(password_Selector);}
     public WebElement getLoginButton(){
         return driver.findElement(login_Selector);
     }
