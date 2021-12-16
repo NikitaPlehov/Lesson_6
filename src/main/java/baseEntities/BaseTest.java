@@ -15,7 +15,6 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
     protected WebDriver driver;
 
-
     @BeforeMethod
     public void setUp(){
         switch (ReadProperties.getBrowserType().toLowerCase()){

@@ -6,18 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage {
+public class DashboadPage extends BasePage {
     // Описание элементов страницы
-    private By PAGE_OPENED_IDENTIFIER = By.className("logo-loginpage");
+    private By PAGE_OPENED_IDENTIFIER = By.className("top-section text-ppp");
 
-    private By email_Selector = By.id("name");
-    private By password_Selector = By.id("password");
-    private By login_Selector = By.id("button_primary");
+    //private By dashboard_Selector = By.id("navigation-dashboard");
+    private By projects_Selector = By.xpath("(//div[@class='table summary summary-auto']/following::div/*[@class = 'row project flex-projects-row'])[8]");
 
     private WebDriver driver;
-
     // Конструктор страницы
-    public LoginPage(WebDriver driver){
+    public DashboadPage(WebDriver driver){
         super(driver);
     }
     public boolean isPageOpened(){
@@ -25,15 +23,11 @@ public class LoginPage extends BasePage {
     }
 
     // Реализация гетерров элементов
-    public WebElement getEmailField(){return driver.findElement(email_Selector);}
-    public WebElement getPasswordField(){
-        return driver.findElement(password_Selector);
-    }
-    public WebElement getLoginButton(){
-        return driver.findElement(login_Selector);
+    //public WebElement getDashboardField(){return driver.findElement(dashboard_Selector);}
+    public WebElement  getProjectsField(){
+        return driver.findElement(projects_Selector);
     }
 
     // Реализация базовых методов
-
 
 }
