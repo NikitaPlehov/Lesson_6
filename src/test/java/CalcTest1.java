@@ -2,7 +2,8 @@ import org.testng.annotations.Test;
 
 public class CalcTest1 extends BaseTest{
 
-    @Test
+    @Test(description = "Test of Sum in my Calculator",
+    groups = "smoke")
     public void testSum(){
         System.out.println("CalcTest1 -> testSum");
     }
