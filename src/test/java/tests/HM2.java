@@ -50,7 +50,7 @@ public class HM2 {
 
         // Использование descendant - все предки текущего узла не зависимо от уровня.
         private static String path3_1 = "//div/ul/descendant::a";
-        private static String path3_2 = "//div//ul//a";   //аналог только проще.
+        private static String path3_2 = "//div/ul//a";   //аналог только проще.
 
         // Использование following - выбираем всё в документе после закрытия тэга текущего узла.
         private static String path4_1 = "//a[@class='t688__link']/following::form";
