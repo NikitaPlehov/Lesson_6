@@ -26,8 +26,6 @@ public class AddProjectPage extends BasePage{
         public WebElement getAddProjectField(){return driver.findElement(addProject_Selector);}
         public WebElement getFilenameField(){return driver.findElement(filename_Selector);}
         public WebElement getAnnouncementField(){return driver.findElement(announcement_Selector);}
-        public WebElement getCheckField(){
-        return driver.findElement(check_Selector);
-    }
+        public WebElement getCheckField(){return driver.findElement(check_Selector);}
         public WebElement getAddProject2Button(){return driver.findElement(addProject2_Selector);}
 }

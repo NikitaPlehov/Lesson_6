@@ -19,6 +19,7 @@ public class SmokeTest extends BaseTest {
         DashboadPage dashboard = new DashboadPage(driver);
         dashboard.getProjectsField().click();
     }
+
     @Test
     public void addProjectTest() {
         LoginPage loginPage = new LoginPage(driver);
