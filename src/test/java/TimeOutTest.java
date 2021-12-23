@@ -6,7 +6,7 @@ public class TimeOutTest {
 
     @Test(timeOut = 1000)
     public void timeOutTest() throws InterruptedException {
-        Thread.sleep(1001);
+        Thread.sleep(999);
 
     }
 }

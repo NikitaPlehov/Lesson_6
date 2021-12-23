@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class CalcTest4 extends BaseTest {
     private Calculator calc = new Calculator("CalcTest4");
 
-    @Test(description = "Test of Multi in my Calculator",
+    @Test(description = "Test of Div in my Calculator",
             groups = "smoke")
     public void testDiv() {
         System.out.println("CalcTest4 -> testDiv");

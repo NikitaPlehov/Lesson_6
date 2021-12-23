@@ -22,10 +22,6 @@ public class CalcTest extends BaseTest{
     public void testSub(){
         System.out.println("CalcTest -> testSub");
     }
-    public void testMulti(){
-        System.out.println("CalcTest -> testMulti");
-    }
-    public void testDiv(){
-        System.out.println("CalcTest -> testDiv");
-    }
+    public void testMulti(){System.out.println("CalcTest -> testMulti");}
+    public void testDiv(){System.out.println("CalcTest -> testDiv");}
 }
