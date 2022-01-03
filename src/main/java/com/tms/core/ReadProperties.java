@@ -21,6 +21,6 @@ public class ReadProperties {
     public static boolean getHeadless(){return properties.getProperty("headless").equalsIgnoreCase("false");}
     public static String getUsername(){return properties.getProperty("username");}
     public static String getPassword(){return properties.getProperty("password");}
-    public static String getFilename(){return properties.getProperty("name*");}
-    public static String getAnnouncement(){return properties.getProperty("announcement");}
+    /*public static String getFilename(){return properties.getProperty("name*");}
+    public static String getAnnouncement(){return properties.getProperty("announcement");}*/
 }

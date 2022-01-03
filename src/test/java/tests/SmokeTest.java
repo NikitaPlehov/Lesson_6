@@ -5,36 +5,29 @@ import com.tms.core.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import pages.AddProjectPage;
-import pages.DashboadPage;
-import pages.LoginPage;
+import pages.CheckBoxes;
+import pages.FormAuthentication;
 
 public class SmokeTest extends BaseTest {
 
     @Test
-    public void loginTest() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(ReadProperties.getUsername(), ReadProperties.getPassword());
-
-        DashboadPage dashboard = new DashboadPage(driver);
-        dashboard.getProjectsField().click();
+    public void checkBoxes() {
+        CheckBoxes checkBoxes = new CheckBoxes(driver);
+        checkBoxes.getCheckBoxes().click();
+        checkBoxes.getCheckBox().click();
     }
 
     @Test
-    public void addProjectTest() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(ReadProperties.getUsername(), ReadProperties.getPassword());
+    public void formAuthenticationTest() {
+        FormAuthentication formAuthentication = new FormAuthentication(driver);
+        formAuthentication.getFormAuthenticationField().click();
+        formAuthentication.getUsername_SelectorField().sendKeys(ReadProperties.getUsername());
+        formAuthentication.getPassword_SelectorField().sendKeys(ReadProperties.getPassword());
+        formAuthentication.getLogin_PutField().click();
 
-        AddProjectPage addProject = new AddProjectPage(driver);
-        addProject.getAddProjectField().click();
-        addProject.getFilenameField().sendKeys(ReadProperties.getFilename());
-        addProject.getAnnouncementField().sendKeys(ReadProperties.getAnnouncement());
-        addProject.getCheckField().click();
-        addProject.getAddProject2Button().click();
-
-        WebElement checkAddingProject = driver.findElement(By.xpath("//*[contains(text(), 'Successfully added the new project.')]"));
-        String checkAddingProjectStr = checkAddingProject.getText();
-        if (!checkAddingProjectStr.equals("Successfully added the new project.")){
+        WebElement checkLogin = driver.findElement(By.xpath("//*[text() = 'You logged into a secure area!']"));
+        String checkLoginStr = checkLogin.getText();
+        if (!checkLoginStr.equals("You logged into a secure area!")){
             System.out.println("Error");
         }
     }
