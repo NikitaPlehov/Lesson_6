@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="2" ignored="9" retried="3" total="31" passed="17">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="1594" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:46 MSK">
+    <groups>
+      <group name="regression">
+        <method signature="GroupsTest.regressionTest()[pri:0, instance:GroupsTest@490ab905]" name="regressionTest" class="GroupsTest"/>
+        <method signature="GroupsTest.sanityTest()[pri:0, instance:GroupsTest@490ab905]" name="sanityTest" class="GroupsTest"/>
+        <method signature="GroupsTest.smokeTest()[pri:0, instance:GroupsTest@490ab905]" name="smokeTest" class="GroupsTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="GroupsTest.smokeTest()[pri:0, instance:GroupsTest@490ab905]" name="smokeTest" class="GroupsTest"/>
+      </group> <!-- smoke -->
+      <group name="sanity">
+        <method signature="GroupsTest.sanityTest()[pri:0, instance:GroupsTest@490ab905]" name="sanityTest" class="GroupsTest"/>
+        <method signature="GroupsTest.smokeTest()[pri:0, instance:GroupsTest@490ab905]" name="smokeTest" class="GroupsTest"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test name="Command line test" duration-ms="1594" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:46 MSK">
+      <class name="DependencyTest">
+        <test-method status="PASS" signature="cbaTest()[pri:0, instance:DependencyTest@3f49dace]" name="cbaTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cbaTest -->
+        <test-method status="FAIL" signature="abcTest()[pri:0, instance:DependencyTest@3f49dace]" name="abcTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" depends-on-methods="DependencyTest.cbaTest" finished-at="2021-12-23T15:42:45 MSK">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.fail(Assert.java:102)
+at DependencyTest.abcTest(DependencyTest.java:9)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- abcTest -->
+        <test-method status="PASS" signature="bacTest()[pri:0, instance:DependencyTest@3f49dace]" name="bacTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" depends-on-methods="DependencyTest.abcTest" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bacTest -->
+      </class> <!-- DependencyTest -->
+      <class name="TimeOutTest">
+        <test-method status="FAIL" signature="timeOutTest()[pri:0, instance:TimeOutTest@6e06451e]" name="timeOutTest" duration-ms="1003" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:46 MSK">
+          <exception class="org.testng.internal.thread.ThreadTimeoutException">
+            <message>
+              <![CDATA[Method TimeOutTest.timeOutTest() didn't finish within the time-out 1000]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.thread.ThreadTimeoutException: Method TimeOutTest.timeOutTest() didn't finish within the time-out 1000
+at org.testng.internal.MethodInvocationHelper.invokeWithTimeoutWithNewExecutor(MethodInvocationHelper.java:367)
+at org.testng.internal.MethodInvocationHelper.invokeWithTimeout(MethodInvocationHelper.java:282)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:603)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.thread.ThreadTimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- timeOutTest -->
+      </class> <!-- TimeOutTest -->
+      <class name="RetryTest">
+        <test-method status="SKIP" signature="flakyTest()[pri:0, instance:RetryTest@72d818d1]" name="flakyTest" duration-ms="0" retried="true" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at RetryTest.flakyTest(RetryTest.java:14)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flakyTest -->
+        <test-method status="SKIP" signature="flakyTest()[pri:0, instance:RetryTest@72d818d1]" name="flakyTest" duration-ms="1" retried="true" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at RetryTest.flakyTest(RetryTest.java:14)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flakyTest -->
+        <test-method status="SKIP" signature="flakyTest()[pri:0, instance:RetryTest@72d818d1]" name="flakyTest" duration-ms="0" retried="true" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at RetryTest.flakyTest(RetryTest.java:14)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flakyTest -->
+        <test-method status="PASS" signature="flakyTest()[pri:0, instance:RetryTest@72d818d1]" name="flakyTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flakyTest -->
+      </class> <!-- RetryTest -->
+      <class name="ExceptionTest">
+        <test-method status="PASS" signature="testNPE()[pri:0, instance:ExceptionTest@1e397ed7]" name="testNPE" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ExceptionTest.testNPE(ExceptionTest.java:12)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNPE -->
+      </class> <!-- ExceptionTest -->
+      <class name="CalcTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:CalcTest@31a5c39e]" name="beforeClass" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="255" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="255" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="254" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="4" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="250" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="251" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="invocationTest()[pri:0, instance:CalcTest@31a5c39e]" name="invocationTest" duration-ms="251" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invocationTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:CalcTest@31a5c39e]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:CalcTest@31a5c39e]" name="afterMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:CalcTest@31a5c39e]" name="afterClass" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- CalcTest -->
+      <class name="ParamTest">
+        <test-method status="PASS" signature="paramTest(java.lang.String, java.lang.String)[pri:0, instance:ParamTest@56ac3a89]" name="paramTest" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Default_login]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11111]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paramTest -->
+      </class> <!-- ParamTest -->
+      <class name="PriorityTest">
+        <test-method status="PASS" signature="cbaTest()[pri:1, instance:PriorityTest@27c20538]" name="cbaTest" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cbaTest -->
+        <test-method status="PASS" signature="abcTest()[pri:2, instance:PriorityTest@27c20538]" name="abcTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- abcTest -->
+        <test-method status="PASS" signature="bacTest()[pri:2, instance:PriorityTest@27c20538]" name="bacTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bacTest -->
+      </class> <!-- PriorityTest -->
+      <class name="GroupsTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:GroupsTest@490ab905]" name="beforeClass" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:GroupsTest@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:GroupsTest@490ab905]" name="afterMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="regressionTest()[pri:0, instance:GroupsTest@490ab905]" name="regressionTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- regressionTest -->
+        <test-method status="PASS" signature="sanityTest()[pri:0, instance:GroupsTest@490ab905]" name="sanityTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sanityTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:GroupsTest@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:GroupsTest@490ab905]" name="afterMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:GroupsTest@490ab905]" name="afterMethod" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="smokeTest()[pri:0, instance:GroupsTest@490ab905]" name="smokeTest" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smokeTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:GroupsTest@490ab905]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:GroupsTest@490ab905]" name="afterClass" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- GroupsTest -->
+      <class name="BaseTest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:BaseTest@5f2108b5]" name="beforeSuite" is-config="true" duration-ms="9" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:BaseTest@5f2108b5]" name="beforeTest" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:45 MSK" finished-at="2021-12-23T15:42:45 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:BaseTest@5f2108b5]" name="afterTest" is-config="true" duration-ms="1" started-at="2021-12-23T15:42:46 MSK" finished-at="2021-12-23T15:42:46 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:BaseTest@5f2108b5]" name="afterSuite" is-config="true" duration-ms="0" started-at="2021-12-23T15:42:46 MSK" finished-at="2021-12-23T15:42:46 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- BaseTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
