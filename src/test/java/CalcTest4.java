@@ -17,7 +17,7 @@ public class CalcTest4 extends BaseTest {
     }
 
     @Test(dataProvider = "dataForDiv", dataProviderClass = StaticProvider.class)
-    public void dataProviderTest(int a, int b, int expectedResult) {
+    public void dataProviderTest(double a, double b, double expectedResult) {
         Assert.assertEquals(calc.div(a, b), expectedResult);
     }
 }

@@ -31,7 +31,7 @@ public class StaticProvider {
     @DataProvider(name = "dataForDiv")
     public static Object[][] dataForDivFunction(){
         return new Object[][]{
-                {-10, -5, 2},
+                {-10.5, -5, 2.1},
                 {1, 1, 1},
                 {10, 5, 2}
         };
