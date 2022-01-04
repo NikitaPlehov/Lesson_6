@@ -5,6 +5,7 @@ import com.tms.core.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -80,5 +81,15 @@ public class SmokeTest extends BaseTest {
         } else {
             System.out.println("Action successful");
         }
+    }
+
+    @Test
+    public void dropdownTest(){
+        Dropdown dropdown = new Dropdown(driver);
+        dropdown.getDropdown().click();
+
+        WebElement dropdown1 = driver.findElement(By.id("dropdown"));
+        Select typeDropDown = new Select(dropdown1);
+        typeDropDown.selectByValue("2");
     }
 }
