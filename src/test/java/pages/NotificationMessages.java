@@ -20,7 +20,6 @@ public class NotificationMessages extends BasePage {
         return super.isPageOpened(PAGE_OPENED_IDENTIFIER);
     }
 
-
     // Реализация гетерров элементов
 
     public WebElement getNotificationMessages(){return driver.findElement(notificationMessages);}

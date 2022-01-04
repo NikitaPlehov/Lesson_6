@@ -21,7 +21,6 @@ public class CheckBoxes extends BasePage {
         return super.isPageOpened(PAGE_OPENED_IDENTIFIER);
     }
 
-
     // Реализация гетерров элементов
 
     public WebElement getCheckBoxes(){return driver.findElement(checkBoxes);}
