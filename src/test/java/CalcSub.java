@@ -2,18 +2,16 @@ import data.StaticProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CalcTest2 extends BaseTest {
-    private Calculator calc = new Calculator("CalcTest2");
+public class CalcSub {
 
-    @Test(description = "Test of Sub in my Calculator",
-            groups = "smoke")
-    public void testSub() {
-        System.out.println("CalcTest2 -> testSub");
-    }
+    private Calculator calc = new Calculator("CalcSub");
+
+    @Test(dependsOnMethods = "testSub1")
+    public void testSub() { Assert.assertEquals(calc.sub(6, 3), 3); }
 
     @Test
     public void testSub1() {
-        System.out.println("CalcTest2 -> testSub1");
+        Assert.assertEquals(calc.sub(8, 0), 8);
     }
 
     @Test(dataProvider = "dataForSub", dataProviderClass = StaticProvider.class)

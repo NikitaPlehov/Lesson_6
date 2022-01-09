@@ -8,10 +8,11 @@
     </test>
     <test name="Regression">
         <classes>
-            <class name="CalcTest1"></class>
-            <class name="CalcTest2"></class>
-            <class name="CalcTest3"></class>
-            <class name="CalcTest4"></class>
+            <class name="CalcSum"></class>
+            <class name="CalcSub"></class>
+            <class name="CalcMulti"></class>
+            <class name="CalcDiv"></class>
         </classes>
     </test>
 </suite>
+

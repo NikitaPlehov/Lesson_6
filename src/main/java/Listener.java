@@ -7,4 +7,9 @@ public class Listener implements ITestListener {
         System.out.println("Screenshot has been captured.");
         System.out.println("===============");
     }
+    public void onTestSuccess(ITestResult result){
+        System.out.println("==============");
+        System.out.println("    SUCCESS ");
+        System.out.println("==============");
+    }
 }

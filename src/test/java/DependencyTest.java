@@ -4,10 +4,7 @@ import org.testng.annotations.Test;
 public class DependencyTest {
 
     @Test(dependsOnMethods = "cbaTest")
-    public void abcTest(){
-        System.out.println("DependencyTest -> abcTest");
-        Assert.fail();
-    }
+    public void abcTest(){ System.out.println("DependencyTest -> abcTest");}
 
     @Test
     public void cbaTest(){
