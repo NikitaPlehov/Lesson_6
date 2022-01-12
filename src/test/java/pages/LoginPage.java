@@ -8,7 +8,9 @@ import org.openqa.selenium.WebElement;
 import static com.sun.xml.internal.ws.api.ComponentFeature.Target.ENDPOINT;
 
 public class LoginPage extends BasePage {
-    protected By PAGE_OPENED_IDENTIFIER = By.id("button_primary");
+    private static String ENDPOINT = "/auth/login";
+
+    private static final By PAGE_OPENED_IDENTIFIER = By.id("button_primary");
 
     protected By emailSelector = By.id("name");
     protected By passwordSelector = By.id("password");
@@ -23,8 +25,9 @@ public class LoginPage extends BasePage {
         driver.get(BASE_URL + ENDPOINT);
     }
 
-    public boolean isPageOpened() {
-        return !super.isPageOpened(PAGE_OPENED_IDENTIFIER);
+    @Override
+    protected boolean isPageOpened() {
+        return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
     public WebElement getEmailField() {
