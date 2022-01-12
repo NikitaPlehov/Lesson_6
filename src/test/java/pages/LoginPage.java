@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static com.sun.xml.internal.ws.api.ComponentFeature.Target.ENDPOINT;
+
 public class LoginPage extends BasePage {
     protected By PAGE_OPENED_IDENTIFIER = By.id("button_primary");
 
@@ -18,7 +20,7 @@ public class LoginPage extends BasePage {
 
     @Override
     protected void openPage() {
-
+        driver.get(BASE_URL + ENDPOINT);
     }
 
     public boolean isPageOpened() {
