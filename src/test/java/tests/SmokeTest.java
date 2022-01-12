@@ -19,12 +19,13 @@ public class SmokeTest extends BaseTest {
         loginPage.getLoginButton().click();
 
         DashboardPage dashboardPage = new DashboardPage(driver);
-        waits.waitForVisibility(dashboardPage.getAddProjectButton());
+        driver.get("https://qa1504.testrail.io/index.php?/admin/overview");
 
-        Assert.assertTrue(dashboardPage.isPageOpened());
+        dashboardPage = new DashboardPage(driver, true);
+        Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
 
-    @Test(retryAnalyzer = Retry.class)
+    @Test (retryAnalyzer = Retry.class)
     public void flakyLoginTest() {
         LoginPage loginPage = new LoginPage(driver);
 
@@ -33,8 +34,9 @@ public class SmokeTest extends BaseTest {
         loginPage.getLoginButton().click();
 
         DashboardPage dashboardPage = new DashboardPage(driver);
-        waits.waitForVisibility(dashboardPage.getAddProjectButton());
+        driver.get("https://qa1504.testrail.io/index.php?/admin/overview");
 
-        Assert.assertTrue(dashboardPage.isPageOpened());
+        dashboardPage = new DashboardPage(driver, true);
+        Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
 }
