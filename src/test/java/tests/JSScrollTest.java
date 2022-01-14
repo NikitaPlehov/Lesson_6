@@ -20,6 +20,5 @@ public class JSScrollTest extends BaseTest {
         Assert.assertTrue(text.isDisplayed());
 
         Thread.sleep(5000);
-
     }
 }
