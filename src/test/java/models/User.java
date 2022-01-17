@@ -24,4 +24,5 @@ public class User {
     public User setPassword(String password) {
         this.password = password;
         return this;
-    }}
+    }
+}
