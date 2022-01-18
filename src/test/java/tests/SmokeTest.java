@@ -47,7 +47,14 @@ public class SmokeTest extends BaseTest {
 
 
     @Test
-    private void setupProjects() {
+    private void setupProjects() throws InterruptedException {
+        User user = new User()
+                .setEmail(ReadProperties.getUsername())
+                .setPassword(ReadProperties.getPassword());
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login(user);
+
         addProject = new Project();
         addProject.setName(Randomization.getRandomString(8));
         addProject.setTypeOfProject(Randomization.getRandomType());
@@ -55,5 +62,7 @@ public class SmokeTest extends BaseTest {
         updateProject = new Project();
         updateProject.setName(Randomization.getRandomString(8));
         updateProject.setTypeOfProject(Randomization.getRandomType());
+
+        Thread.sleep(5000);
     }
 }

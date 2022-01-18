@@ -2,7 +2,9 @@ package models;
 
 import enums.ProjectType;
 
+
 public class Project {
+
     private String name;
     private String announcement;
     private boolean isShowAnnouncement;
