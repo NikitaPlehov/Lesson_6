@@ -9,9 +9,13 @@ import org.testng.annotations.Test;
 import pages.AddProjectPage;
 import pages.DashboardPage;
 import pages.LoginPage;
+import utils.Randomization;
 import utils.Retry;
 
 public class SmokeTest extends BaseTest {
+
+    Project addProject;
+    Project updateProject;
 
     @Test
     public void loginTest() {
@@ -41,26 +45,15 @@ public class SmokeTest extends BaseTest {
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
 
+
     @Test
-    public void addProjectTest(){
-        User user = new User()
-                .setEmail(ReadProperties.getUsername())
-                .setPassword(ReadProperties.getPassword());
+    private void setupProjects() {
+        addProject = new Project();
+        addProject.setName(Randomization.getRandomString(8));
+        addProject.setTypeOfProject(Randomization.getRandomType());
 
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(user);
-
-        Project project = new Project()
-                .setName(ReadProperties.getName())
-                .setAnnouncement(ReadProperties.getAnnouncement());
-
-        AddProjectPage addProjectPage = new AddProjectPage(driver);
-        addProjectPage.AddProjectPage(project);
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        updateProject = new Project();
+        updateProject.setName(Randomization.getRandomString(8));
+        updateProject.setTypeOfProject(Randomization.getRandomType());
     }
 }
