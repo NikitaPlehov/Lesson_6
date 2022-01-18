@@ -4,6 +4,7 @@ import baseEntities.BasePage;
 import enums.ProjectType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
 

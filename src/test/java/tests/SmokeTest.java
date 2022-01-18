@@ -6,6 +6,7 @@ import models.Project;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AddProjectPage;
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.Randomization;
@@ -48,6 +49,7 @@ public class SmokeTest extends BaseTest {
 
     @Test
     private void setupProjects() {
+
         addProject = new Project();
         addProject.setName(Randomization.getRandomString(8));
         addProject.setTypeOfProject(Randomization.getRandomType());
