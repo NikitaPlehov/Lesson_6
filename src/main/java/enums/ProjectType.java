@@ -1,6 +1,6 @@
 package enums;
 
-public class ProjectType {
+public enum ProjectType {
     SINGLE(1),
     SINGLE_WITH_BASELINE(2),
     MULTIPLE(3);
