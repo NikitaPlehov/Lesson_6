@@ -1,5 +1,7 @@
 package utils;
 
+import enums.ProjectType;
+
 import java.util.Random;
 
 public class Randomization {
@@ -19,8 +21,13 @@ public class Randomization {
         return buffer.toString();
     }
 
-    public static int getRandomInt(int rightBound){
+    public static int gerRandomInt(int rightBound) {
         Random rnd = new Random();
         return rnd.nextInt(rightBound);
+    }
+
+    public static ProjectType getRandomType() {
+        Random rnd = new Random();
+        return ProjectType.values()[rnd.nextInt(ProjectType.values().length)];
     }
 }

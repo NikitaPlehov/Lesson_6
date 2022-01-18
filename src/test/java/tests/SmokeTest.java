@@ -11,8 +11,11 @@ import pages.LoginPage;
 import utils.Randomization;
 import utils.Retry;
 
+import java.lang.reflect.Type;
+
 public class SmokeTest extends BaseTest {
     Project addProject;
+    Project updateProject;
 
     @Test
     public void loginTest() {
@@ -44,10 +47,13 @@ public class SmokeTest extends BaseTest {
 
 
     @Test
-    private void setupProjects(){
+    private void setupProjects() {
         addProject = new Project();
         addProject.setName(Randomization.getRandomString(8));
-      //  addProject.setTypeOfProject(Randomization.getRandomInt(2));
+        addProject.setTypeOfProject(Randomization.getRandomType());
 
+        updateProject = new Project();
+        updateProject.setName(Randomization.getRandomString(8));
+        updateProject.setTypeOfProject(Randomization.getRandomType());
     }
 }

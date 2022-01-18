@@ -36,13 +36,13 @@ public class Project {
         isShowAnnouncement = showAnnouncement;
     }
 
-   /*public int getTypeOfProject() {
+    public ProjectType getTypeOfProject() {
         return typeOfProject;
     }
 
-    public void setTypeOfProject(int typeOfProject) {
+    public void setTypeOfProject(ProjectType typeOfProject) {
         this.typeOfProject = typeOfProject;
-    }*/
+    }
 
     public boolean isCompleted() {
         return isCompleted;
