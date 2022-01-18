@@ -4,16 +4,12 @@ import baseEntities.BaseTest;
 import com.tms.core.ReadProperties;
 import models.Project;
 import models.User;
-import models.UserBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AddProjectPage;
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.Randomization;
 import utils.Retry;
-
-import java.lang.reflect.Type;
 
 public class SmokeTest extends BaseTest {
     Project addProject;
@@ -21,13 +17,12 @@ public class SmokeTest extends BaseTest {
 
     @Test
     public void loginTestWithBuilder() {
-        UserBuilder user = new UserBuilder.Builder()
-                .withEmail(ReadProperties.getUsername())
-                .withPassword(ReadProperties.getPassword())
-                .build();
+        User user = new User();
+        user.setEmail(ReadProperties.getUsername());
+        user.setPassword(ReadProperties.getPassword());
 
         LoginPage loginPage = new LoginPage(driver);
-        //loginPage.login(user);
+        loginPage.login(user);
 
         DashboardPage dashboardPage = new DashboardPage(driver);
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
