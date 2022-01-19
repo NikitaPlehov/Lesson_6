@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
+
 public class AddProjectPage extends BasePage {
 
     private static String ENDPOINT = "/dashboard";
@@ -35,5 +36,4 @@ public class AddProjectPage extends BasePage {
     public void setType(ProjectType type) {
         driver.findElement(By.xpath(typeRadioButtonSelector.replace("replace", String.valueOf(type))));
     }
-
 }

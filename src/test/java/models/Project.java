@@ -53,4 +53,5 @@ public class Project {
     public void setCompleted(boolean completed) {
         isCompleted = completed;
     }
+
 }
