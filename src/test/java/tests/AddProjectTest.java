@@ -32,12 +32,12 @@ public class AddProjectTest extends BaseTest {
         loginSteps.loginGeneralUsers(user);
         driver.get("https://qa1504.testrail.io/index.php?/admin/projects/add/1");
         projectSteps.addProject(project);
-        GlobalProjectsPage generalProjectsPage = new GlobalProjectsPage(driver);
-        Assert.assertTrue(generalProjectsPage.getSuccessfullyMessageAboutAddingProject().isDisplayed());
+        GlobalProjectsPage globalProjectsPage = new GlobalProjectsPage(driver);
+        Assert.assertTrue(globalProjectsPage.getSuccessfullyMessageAboutAddingProject().isDisplayed());
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();",
-                generalProjectsPage.findAnyProjectInDashboard(project.getName()));
-        Assert.assertTrue(waits.waitForVisibility(generalProjectsPage.findAnyProjectInDashboard(project.getName())),
+                globalProjectsPage.findAnyProjectInDashboard(project.getName()));
+        Assert.assertTrue(waits.waitForVisibility(globalProjectsPage.findAnyProjectInDashboard(project.getName())),
                 "Не создан");
     }
 
@@ -51,17 +51,17 @@ public class AddProjectTest extends BaseTest {
                     .build();
             loginSteps.loginGeneralUsers(user);
             driver.get("https://qa1504.testrail.io/index.php?/admin/projects/overview");
-            GlobalProjectsPage generalProjectsPage = new GlobalProjectsPage(driver);
+            GlobalProjectsPage globalProjectsPage = new GlobalProjectsPage(driver);
             projectSteps.updateProject(currentProject, updateProject);
-            Assert.assertTrue(generalProjectsPage.findAnyProjectInProject(updateProject.getName()).isDisplayed());
+            Assert.assertTrue(globalProjectsPage.findAnyProjectInProject(updateProject.getName()).isDisplayed());
         }
 
         @Test(dependsOnMethods = "updateProject")
         public void deleteProject(){
             loginSteps.loginGeneralUsers(user);
             driver.get("https://qa1504.testrail.io/index.php?/admin/projects/overview");
-            GlobalProjectsPage generalProjectsPage = new GlobalProjectsPage(driver);
+            GlobalProjectsPage globalProjectsPage = new GlobalProjectsPage(driver);
             projectSteps.deleteProject(updateProject);
-            Assert.assertTrue(generalProjectsPage.getSuccessfullyMessageAboutDeleteProject().isDisplayed());
+            Assert.assertTrue(globalProjectsPage.getSuccessfullyMessageAboutDeleteProject().isDisplayed());
         }
     }
