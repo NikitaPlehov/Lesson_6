@@ -1,6 +1,9 @@
 package models;
 
 import enums.ProjectType;
+import lombok.Builder;
+import lombok.Data;
+
 
 public class Project {
     private String name;
