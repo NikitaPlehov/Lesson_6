@@ -21,7 +21,7 @@ public class Randomization {
         return buffer.toString();
     }
 
-    public static int gerRandomInt(int rightBound) {
+    public static int getRandomInt(int rightBound) {
         Random rnd = new Random();
         return rnd.nextInt(rightBound);
     }

@@ -25,8 +25,6 @@ public class LoginPage extends BasePage {
     protected void openPage() {
         driver.get(BASE_URL + ENDPOINT);
     }
-
-    @Override
     protected boolean isPageOpened() {
         return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
@@ -43,9 +41,32 @@ public class LoginPage extends BasePage {
         return driver.findElement(loginSelector);
     }
 
-    public void login(User user) {
+    //реализация базовых методов
+    private void populateFields(String email, String password) {
+        getEmailField().sendKeys(email);
+        getPasswordField().sendKeys(password);
+    }
+
+    public void login(String email, String password) {
+        populateFields(email, password);
+        getLoginButton().click();
+    }
+
+    public void loginWithValue(User user) {
         getEmailField().sendKeys(user.getEmail());
         getPasswordField().sendKeys(user.getPassword());
         getLoginButton().click();
+    }
+
+    public DashboardPage successLogin(String email, String password) {
+        populateFields(email, password);
+        getLoginButton().click();
+        return new DashboardPage(driver);
+    }
+
+        public LoginPage incorrectLogin (String email, String password){
+            populateFields(email, password);
+            getLoginButton().click();
+            return new LoginPage(driver);
     }
 }
