@@ -15,7 +15,7 @@ public class SmokeTest extends BaseTest {
     Project addProject;
     Project updateProject;
 
-    @Test
+ /*   @Test
     public void loginTestWithBuilder() {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
@@ -44,7 +44,7 @@ public class SmokeTest extends BaseTest {
     }
 
 
-    @Test
+    /*  @Test
     private void setupProjects() {
 
         addProject = new Project();
@@ -54,5 +54,5 @@ public class SmokeTest extends BaseTest {
         updateProject = new Project();
         updateProject.setName(Randomization.getRandomString(8));
         updateProject.setTypeOfProject(Randomization.getRandomType());
-    }
+    }*/
 }

@@ -36,7 +36,7 @@ public class TestRailApiTest1 extends BaseApiTest {
                 .name("WP_Project_01")
                 .announcement("This is the description for the project")
                 .isShowAnnouncement(true)
-                .typeOfProject(ProjectType.SINGLE.getProjectType())
+                .typeOfProject(ProjectType.SINGLE_SUITE_MODE)
                 .build();
 
         given()
@@ -62,7 +62,7 @@ public class TestRailApiTest1 extends BaseApiTest {
 
         ProjectBuilder project = ProjectBuilder.builder()
                 .name("WP_Project_02")
-                .typeOfProject(ProjectType.SINGLE.getProjectType())
+                .typeOfProject(ProjectType.SINGLE_SUITE_MODE)
                 .build();
 
         Map<String, Object> jsonAsMap = new HashMap<>();
@@ -84,7 +84,7 @@ public class TestRailApiTest1 extends BaseApiTest {
 
         ProjectBuilder project = ProjectBuilder.builder()
                 .name("WP_Project_03")
-                .typeOfProject(ProjectType.SINGLE_WITH_BASELINE.getProjectType())
+                .typeOfProject(ProjectType.SINGLE_SUITE_BASELINES)
                 .build();
 
         given()
@@ -102,15 +102,16 @@ public class TestRailApiTest1 extends BaseApiTest {
 
         ProjectBuilder project = ProjectBuilder.builder()
                 .name("WP_Project_04")
-                .typeOfProject(ProjectType.SINGLE_WITH_BASELINE.getProjectType())
+                .typeOfProject(ProjectType.SINGLE_SUITE_BASELINES)
                 .build();
 
-        int projectID = given()
+        projectID = given()
                 .body(project, ObjectMapperType.GSON)
                 .log().body()
                 .when()
                 .post(endpoint)
                 .then()
+                .log().body()
                 .statusCode(HttpStatus.SC_OK)
                 .extract().jsonPath().get("id");
 
@@ -118,7 +119,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     }
     @Test(dependsOnMethods = "addProject4")
     public void updateProject(){
-        String  endpoint = "/index.php?/api/v2/update_project/{project_id}";
+        String endpoint = "/index.php?/api/v2/update_project/{project_id}";
 
         ProjectBuilder projectUpd = ProjectBuilder.builder()
                 .name("WP_Project_04_UPD")

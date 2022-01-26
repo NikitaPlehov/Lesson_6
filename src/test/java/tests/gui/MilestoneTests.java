@@ -9,7 +9,7 @@ import pages.LoginPage;
 
 public class MilestoneTests extends BaseTest {
 
-    @Test
+  /*  @Test
     public void test1() {
         Project project = new Project();
         User user = new User();
@@ -21,5 +21,5 @@ public class MilestoneTests extends BaseTest {
         projectSteps.addProject(project);
         milestoneSteps.createMilestone(project, milestone);
 
-    }
+    }*/
 }
