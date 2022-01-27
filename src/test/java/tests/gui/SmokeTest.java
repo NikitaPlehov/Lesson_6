@@ -15,11 +15,12 @@ public class SmokeTest extends BaseTest {
     Project addProject;
     Project updateProject;
 
- /*   @Test
+   @Test
     public void loginTestWithBuilder() {
-        User user = new User();
-        user.setEmail(ReadProperties.getUsername());
-        user.setPassword(ReadProperties.getPassword());
+        User user = User.builder()
+                .email(ReadProperties.getUsername())
+                .password(ReadProperties.getPassword())
+                .build();
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user);
