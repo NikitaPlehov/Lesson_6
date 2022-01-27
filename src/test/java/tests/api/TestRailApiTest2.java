@@ -43,7 +43,7 @@ public class TestRailApiTest2 extends BaseApiTest {
     }
 
     @Test
-    public void getAllUsers2(){
+    public void getUser(){
         int userID = 1;
 
         User expectedUser = User.builder()
