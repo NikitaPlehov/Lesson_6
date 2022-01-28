@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
+import utils.Listener;
 import utils.Randomization;
 import utils.Retry;
 
@@ -16,7 +17,7 @@ public class SmokeTest extends BaseTest {
     Project updateProject;
 
    @Test
-    public void loginTestWithBuilder() {
+    public void loginTest() {
         User user = User.builder()
                 .email(ReadProperties.getUsername())
                 .password(ReadProperties.getPassword())
