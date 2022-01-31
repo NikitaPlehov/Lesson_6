@@ -1,7 +1,7 @@
 package tests.api;
 
-import baseEntities.BaseApiTest;
-import com.tms.core.ReadProperties;
+import baseEntity.BaseApiTest;
+import core.ReadProperties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
@@ -30,16 +30,15 @@ public class TestRailApiTest extends BaseApiTest {
         httpRequest.auth().preemptive().basic(ReadProperties.getUsername(), ReadProperties.getPassword());
 
         // Setup Response Object
-
         Response response = httpRequest.request(Method.GET, endpoint);
 
-        //Get response Status
+        // Get Response Status
         int statusCode = response.getStatusCode();
-        System.out.println("Status Code:" + statusCode);
-        Assert.assertEquals(statusCode, 200); //проверка 200
-        Assert.assertEquals(statusCode, HttpStatus.SC_OK); // такое же как первое
+        System.out.println("Status Code: " + statusCode);
+        Assert.assertEquals(statusCode, 200);
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
 
-        // Get Response body
+        // Get Response Body
         String responseBody = response.getBody().asString();
         System.out.println("Response: " + responseBody);
     }

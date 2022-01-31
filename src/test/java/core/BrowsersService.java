@@ -1,4 +1,4 @@
-package com.tms.core;
+package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
@@ -49,5 +49,3 @@ public class BrowsersService {
         return driver;
     }
 }
-
-

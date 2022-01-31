@@ -1,6 +1,6 @@
 package steps;
 
-import baseEntities.BaseStep;
+import baseEntity.BaseStep;
 import models.Milestone;
 import models.Project;
 import org.openqa.selenium.WebDriver;

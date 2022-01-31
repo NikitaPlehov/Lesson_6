@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class ReqresApiTest {
+public class reqresApiTest {
 
     @Test
-    public void simpleStepByStepApiTest(){
+    public void simpleStepByStepApiTest() {
         // Setup RestAssured
         RestAssured.baseURI = "https://reqres.in";
 
@@ -25,22 +25,21 @@ public class ReqresApiTest {
         RequestSpecification httpRequest = given();
 
         // Setup Response Object
-
         Response response = httpRequest.request(Method.GET, endpoint);
 
-        //Get response Status
+        // Get Response Status
         int statusCode = response.getStatusCode();
-        System.out.println("Status Code:" + statusCode);
-        Assert.assertEquals(statusCode, 200); //проверка 200
-        Assert.assertEquals(statusCode, HttpStatus.SC_OK); // такое же как первое
+        System.out.println("Status Code: " + statusCode);
+        Assert.assertEquals(statusCode, 200);
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
 
-        // Get Response body
+        // Get Response Body
         String responseBody = response.getBody().asString();
         System.out.println("Response: " + responseBody);
-
     }
+
     @Test
-    public void simpleShortApiTest(){
+    public void simpleShortApiTest() {
         // Setup RestAssured
         RestAssured.baseURI = "https://reqres.in";
 
@@ -54,6 +53,5 @@ public class ReqresApiTest {
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .log().body();
-
     }
 }

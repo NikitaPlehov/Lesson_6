@@ -1,8 +1,8 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.*;
-import org.testng.annotations.Test;
+import lombok.Builder;
+import lombok.Data;
 
 @Data
 @Builder
