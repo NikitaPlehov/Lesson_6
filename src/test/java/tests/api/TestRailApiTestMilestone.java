@@ -8,16 +8,14 @@ import models.*;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 import utils.Endpoints;
-
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class TestRailApiTestMilestone extends BaseApiTest {
+
     int projectID;
     int milestoneID;
-
 
     @Test
     public void addProject(){

@@ -11,7 +11,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Endpoints;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 
@@ -19,6 +18,7 @@ public class TestRailApiTestCases extends BaseApiTest {
 
     int projectID;
     int sectionId;
+    int sectionId2;
     int caseId;
 
     @Test
@@ -66,6 +66,67 @@ public class TestRailApiTestCases extends BaseApiTest {
 
     }
 
+    @Test(dependsOnMethods = "addProject")
+    public void addSectionToMove() {
+
+        AddSection addSection = AddSection.builder()
+                .name("TOYOTA")
+                .description("456")
+                .build();
+
+        sectionId2 = given()
+                .pathParam("project_id", projectID)
+                .body(addSection, ObjectMapperType.GSON)
+                .when()
+                .post(Endpoints.ADD_SECTION)
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .log().body()
+                .extract().jsonPath().get("id");
+
+        System.out.println(sectionId2);
+
+    }
+
+    @Test(dependsOnMethods = "addSectionToMove")
+    public void addCaseToMove(){
+
+        Cases addCase = Cases.builder()
+                .title("hard")
+                .section_id(sectionId2)
+                .build();
+
+        caseId = given()
+                .pathParam("section_id", sectionId2)
+                .body(addCase, ObjectMapperType.GSON)
+                .when()
+                .post(Endpoints.ADD_CASE)
+                .then()
+                .body("title", is(addCase.getTitle()))
+                .statusCode(HttpStatus.SC_OK)
+                .log().body()
+                .extract().jsonPath().get("id");
+
+        System.out.println(caseId);
+
+    }
+
+    @Test(dependsOnMethods = {"addProject", "addSection", "addSectionToMove", "addCaseToMove"})
+    public void moveCaseToSection() {
+
+        given()
+                .pathParam("section_id", sectionId2)
+                .body(String.format("{\n" +
+                        "  \"case_ids\": [" + caseId + "] \n" +
+                        "}"))
+                .log().body()
+                .when()
+                .post(Endpoints.MOVE_CASES_TO_SECTION)
+                .then()
+                .statusCode(HttpStatus.SC_OK);
+
+    }
+
     @Test(dependsOnMethods = "addSection")
     public void addCase(){
 
@@ -104,13 +165,11 @@ public class TestRailApiTestCases extends BaseApiTest {
                 .log().body()
                 .statusCode(HttpStatus.SC_OK);
 
-
     }
 
     @Test(dependsOnMethods = "addCase")
     public void updateCase(){
         Gson gson = new Gson();
-
 
         Cases updateCase = Cases.builder()
                 .title("easyTitle")
@@ -132,7 +191,7 @@ public class TestRailApiTestCases extends BaseApiTest {
 
     }
 
-    @Test(dependsOnMethods = "updateCase")
+    @Test(dependsOnMethods = {"addProject", "addSection", "addCase", "getCase", "updateCase"})
     public void deleteCase(){
 
         given()
