@@ -33,4 +33,8 @@ public final class Waits {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public WebElement waitForClickable(WebElement webElement) {
+        return wait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
 }

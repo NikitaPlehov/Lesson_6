@@ -1,6 +1,8 @@
 package pages;
 
 import baseEntity.BasePage;
+import elements.Button;
+import elements.Input;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,16 +29,16 @@ public class LoginPage extends BasePage {
         return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
-    public WebElement getEmailField() {
-        return driver.findElement(emailSelector);
+    public Input getEmailField() {
+        return new Input(driver, emailSelector);
     }
 
-    public WebElement getPasswordField() {
-        return driver.findElement(passwordSelector);
+    public Input getPasswordField() {
+        return new Input(driver, passwordSelector);
     }
 
-    public WebElement getLoginButton() {
-        return driver.findElement(loginSelector);
+    public Button getLoginButton() {
+        return new Button(driver, loginSelector);
     }
 
     public void login(User user) {
