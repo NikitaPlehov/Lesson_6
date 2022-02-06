@@ -1,6 +1,6 @@
 package tests.gui;
 
-import baseEntities.BaseTest;
+
 import com.tms.core.ReadProperties;
 import models.Project;
 import models.User;
@@ -10,12 +10,12 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import utils.Randomization;
 import utils.Retry;
-
+ /*
 public class LombokTest extends BaseTest {
     Project addProject;
     Project updateProject;
 
- /*   @Test
+  @Test
     public void loginTestWithBuilder() {
         User user = new User();
         user.setEmail(ReadProperties.getUsername());
@@ -27,5 +27,5 @@ public class LombokTest extends BaseTest {
 
         System.out.println(user.toString());
         System.out.println(user.equals(user1));
-    }*/
-}
+    }
+}*/
