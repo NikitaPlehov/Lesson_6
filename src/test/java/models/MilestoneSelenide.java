@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class MilestoneSelenide {
     private String name;
-    private String references;
+    private String reference;
     private String description;
 
 }

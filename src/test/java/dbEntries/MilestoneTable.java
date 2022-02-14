@@ -1,6 +1,6 @@
 package dbEntries;
 
-import com.tms.core.DataBaseService;
+import core.DataBaseService;
 import org.testng.log4testng.Logger;
 
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class MilestoneTable {
     public void createTable() {
         logger.info("Создаем таблицу milestones");
 
-        String createTableSQL = "CREATE TABLE milestones (" +
+        String createTableSQL = "CREATE TABLE Milestone (" +
                 "id SERIAL PRIMARY KEY, " +
                 "milestone CHARACTER VARYING(30), " +
                 "reference CHARACTER VARYING(30), " +

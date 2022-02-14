@@ -1,7 +1,7 @@
 package baseEntities;
 
 
-import com.tms.core.ReadProperties;
+import core.ReadProperties;
 import org.openqa.selenium.WebDriver;
 import utils.Waits;
 
@@ -36,7 +36,7 @@ public abstract class BasePage {
         boolean isPageOpenedIndicator = isPageOpened();
 
         while (!isPageOpenedIndicator
-                && tryCount < (WAIT_FOR_PAGE_LOADED_IN_SECONDS/ReadProperties.getTimeOut())) {
+                && tryCount < (WAIT_FOR_PAGE_LOADED_IN_SECONDS/ ReadProperties.getTimeOut())) {
             tryCount++;
             isPageOpenedIndicator = isPageOpened();
         }

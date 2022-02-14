@@ -1,4 +1,4 @@
-package com.tms.core;
+package core;
 
 import java.io.IOException;
 import java.util.Properties;

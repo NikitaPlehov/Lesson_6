@@ -1,7 +1,5 @@
 package utils;
 
-import enums.ProjectType;
-
 import java.util.Random;
 
 public class Randomization {

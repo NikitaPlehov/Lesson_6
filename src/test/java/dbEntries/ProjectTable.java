@@ -1,6 +1,6 @@
 package dbEntries;
 
-import com.tms.core.DataBaseService;
+import core.DataBaseService;
 import org.testng.log4testng.Logger;
 
 import java.sql.ResultSet;

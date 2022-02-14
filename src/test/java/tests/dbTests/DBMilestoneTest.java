@@ -48,7 +48,7 @@ public class DBMilestoneTest extends BaseTest {
         ProjectTable projectsTable = new ProjectTable(dataBaseService);
 
         projectsTable.createTable();
-        projectsTable.addProject("AudiDrive", "AudiDrive123");
+        projectsTable.addProject("AudiDrive12234", "AudiDrive12321234");
 
         String nameProject = null;
         String announcement = null;
@@ -90,8 +90,8 @@ public class DBMilestoneTest extends BaseTest {
         MilestoneTable milestoneTable = new MilestoneTable(dataBaseService);
 
         milestoneTable.createTable();
-        milestoneTable.addMilestone("123Mile_ST", "123REF", "123DESC");
-        milestoneTable.addMilestone("UPDATE_123Mile_ST", "UPDATE_123REF", "UPDATE_123DESC");
+        milestoneTable.addMilestone("123Mile_ST1", "123REF1", "123DESC1");
+        milestoneTable.addMilestone("UPDATE_123Mile_ST1", "UPDATE_123REF1", "UPDATE_123DESC1");
 
         String nameMilestone = null;
         String reference = null;
@@ -115,7 +115,7 @@ public class DBMilestoneTest extends BaseTest {
 
         addMilestone = new MilestoneSelenide();
         addMilestone.setName(nameMilestone);
-        addMilestone.setReferences(reference);
+        addMilestone.setReference(reference);
         addMilestone.setDescription(description);
 
         AddMilestoneSelenide addMilestoneSelenide = new AddMilestoneSelenide();
@@ -156,7 +156,7 @@ public class DBMilestoneTest extends BaseTest {
 
         updateMilestone = new MilestoneSelenide();
         updateMilestone.setName(nameMilestone);
-        updateMilestone.setReferences(reference);
+        updateMilestone.setReference(reference);
         updateMilestone.setDescription(description);
 
         AddMilestoneSelenide updateMilestoneSelenide = new AddMilestoneSelenide();

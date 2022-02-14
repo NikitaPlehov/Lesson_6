@@ -23,7 +23,7 @@ public class AddMilestoneSelenide {
 
     public void addMilestone(MilestoneSelenide addMilestone){
         getNameField().val(addMilestone.getName());
-        getRefField().val(addMilestone.getReferences());
+        getRefField().val(addMilestone.getReference());
         getDescriptionField().val(addMilestone.getDescription());
         getAddMilestoneButton().click();
     }
@@ -32,7 +32,7 @@ public class AddMilestoneSelenide {
         getNameField().clear();
         getNameField().val(updateMilestone.getName());
         getRefField().clear();
-        getRefField().val(updateMilestone.getReferences());
+        getRefField().val(updateMilestone.getReference());
         getDescriptionField().clear();
         getDescriptionField().val(updateMilestone.getDescription());
         getIsShowCompletedField().click();

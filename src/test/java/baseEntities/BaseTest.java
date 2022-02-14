@@ -2,7 +2,7 @@ package baseEntities;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.tms.core.DataBaseService;
+import core.DataBaseService;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.*;
 import utils.Listener;
