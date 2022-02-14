@@ -1,37 +1,44 @@
 package baseEntities;
 
-import com.tms.core.BrowsersService;
-import com.tms.core.ReadProperties;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.tms.core.DataBaseService;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.testng.annotations.*;
 import utils.Listener;
-import utils.Waits;
-/*
+
 @Listeners(Listener.class)
 public class BaseTest {
-    protected WebDriver driver;
-    protected BrowsersService browsersService;
-    protected Waits waits;
+    String url = "https://qa1507.testrail.io";
+    protected String username = "atrostyanko+0401@gmail.com";
+    protected String password = "QqtRK9elseEfAk6ilYcJ";
+    protected DataBaseService dataBaseService;
 
-    protected ProjectSteps projectSteps;
-    protected MilestoneSteps milestoneSteps;
+    @BeforeSuite
+    public void setupAllureReports() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-    @BeforeClass
-    public void setUp() {
-        browsersService = new BrowsersService();
-        driver = browsersService.getDriver();
-        waits = new Waits(driver);
-        projectSteps = new ProjectSteps(driver);
-        milestoneSteps = new MilestoneSteps(driver);
-
-        driver.get(ReadProperties.getUrl());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(false)
+                .savePageSource(true)
+        );
     }
 
-    @AfterClass
-    public void closePage() {
-        driver.quit();
-    }
-}*/
+        @BeforeTest
+        public void setupConnection() {
+            org.apache.log4j.BasicConfigurator.configure();
+            Configuration.baseUrl = url;
+            Configuration.browser = "chrome";
+            Configuration.startMaximized = true;
+        }
+
+        @BeforeClass
+        public void setUp () {
+            dataBaseService = new DataBaseService();
+        }
+
+        @AfterTest
+        public void closeConnection() {
+            dataBaseService.closeConnection();
+        }
+}
