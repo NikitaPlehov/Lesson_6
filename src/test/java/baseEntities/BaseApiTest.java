@@ -1,6 +1,6 @@
 package baseEntities;
 
-import com.tms.core.ReadProperties;
+import core.ReadProperties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.apache.http.protocol.HTTP;
