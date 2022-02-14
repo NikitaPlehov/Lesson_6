@@ -15,7 +15,7 @@ public class CaseTable {
     }
 
     public void createTable() {
-        logger.info("Создаем таблицу cases");
+        logger.info("Создаем таблицу cases.");
 
         String createTableSQL = "CREATE TABLE cases (" +
                 "id SERIAL PRIMARY KEY, " +
