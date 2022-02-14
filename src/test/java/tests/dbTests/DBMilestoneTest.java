@@ -2,26 +2,22 @@ package tests.dbTests;
 
 import baseEntities.BaseTest;
 import dbEntries.MilestoneTable;
-import dbEntries.ProjectTable;
-import models.Milestone;
 import models.MilestoneSelenide;
 import models.Project;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
 import pages.*;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class DBMilestoneTest extends BaseTest {
 
+public class DBMilestoneTest extends BaseTest {
     public static Logger logger = Logger.getLogger(DBMilestoneTest.class);
 
     Project addProject;
@@ -30,7 +26,6 @@ public class DBMilestoneTest extends BaseTest {
 
     @Test
     public void loginTest() {
-
         open("/");
 
         LoginPageSelenide loginPageSelenide = new LoginPageSelenide();
@@ -44,35 +39,9 @@ public class DBMilestoneTest extends BaseTest {
 
     @Test(dependsOnMethods = "loginTest")
     public void addProjectTest() {
-
-        ProjectTable projectsTable = new ProjectTable(dataBaseService);
-
-        projectsTable.createTable();
-        projectsTable.addProject("Drive412234", "Drive412321234");
-
-        String nameProject = null;
-        String announcement = null;
-
-        ResultSet rs = projectsTable.getProjectByID(1);
-
-        try {
-            while (rs.next()) {
-                nameProject = rs.getString("project");
-                announcement = rs.getString("announcement");
-
-                logger.info("nameProject: " + nameProject);
-                logger.info("lastname: " + announcement);
-            }
-        } catch (SQLException e) {
-            logger.error(e.toString());
-        }
-        projectsTable.dropTable();
-
         open("/index.php?/admin/projects/add/1");
         addProject = new Project();
-        addProject.setName(nameProject);
-        addProject.setAnnouncement(announcement);
-
+        addProject.setName("drdrdr");
 
         AddProjectPageSelenide addProjectPageSelenide = new AddProjectPageSelenide();
         addProjectPageSelenide.addProject(addProject);
@@ -82,7 +51,6 @@ public class DBMilestoneTest extends BaseTest {
 
     @Test(dependsOnMethods = {"loginTest", "addProjectTest"})
     public void addMilestonesTest() {
-
         open("/index.php?/dashboard");
         $(byText(addProject.getName())).click();
         $("#navigation-overview-addmilestones").click();
@@ -90,7 +58,7 @@ public class DBMilestoneTest extends BaseTest {
         MilestoneTable milestoneTable = new MilestoneTable(dataBaseService);
 
         milestoneTable.createTable();
-        milestoneTable.addMilestone("1234Mile_ST1", "123REF1", "123DESC1");
+        milestoneTable.addMilestone("12534Mile_ST1", "123REF1", "123DESC1");
         milestoneTable.addMilestone("UPDATE_123Mile_ST1", "UPDATE_123REF1", "UPDATE_123DESC1");
 
         String nameMilestone = null;

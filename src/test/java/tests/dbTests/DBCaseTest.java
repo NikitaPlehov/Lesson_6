@@ -2,7 +2,6 @@ package tests.dbTests;
 
 import baseEntities.BaseTest;
 import dbEntries.CaseTable;
-import dbEntries.ProjectTable;
 import models.CasesSelenide;
 import models.Project;
 import org.openqa.selenium.By;
@@ -10,17 +9,15 @@ import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 import pages.AddCasesSelenide;
 import pages.AddProjectPageSelenide;
-import pages.LoginPage;
 import pages.LoginPageSelenide;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+
 
 public class DBCaseTest extends BaseTest {
 
@@ -32,7 +29,6 @@ public class DBCaseTest extends BaseTest {
 
     @Test
     public void loginTest() {
-
         open("/");
 
         LoginPageSelenide loginPageSelenide = new LoginPageSelenide();
@@ -46,35 +42,9 @@ public class DBCaseTest extends BaseTest {
 
     @Test(dependsOnMethods = "loginTest")
     public void addProjectTest() {
-
-        ProjectTable projectsTable = new ProjectTable(dataBaseService);
-
-        projectsTable.createTable();
-        projectsTable.addProject("Drive412d2134", "Drive412321234");
-
-        String nameProject = null;
-        String announcement = null;
-
-        ResultSet rs = projectsTable.getProjectByID(1);
-
-        try {
-            while (rs.next()) {
-                nameProject = rs.getString("project");
-                announcement = rs.getString("announcement");
-
-                logger.info("nameProject: " + nameProject);
-                logger.info("lastname: " + announcement);
-            }
-        } catch (SQLException e) {
-            logger.error(e.toString());
-        }
-        projectsTable.dropTable();
-
         open("/index.php?/admin/projects/add/1");
         addProject = new Project();
-        addProject.setName(nameProject);
-        addProject.setAnnouncement(announcement);
-
+        addProject.setName("drdrzdr1233");
 
         AddProjectPageSelenide addProjectPageSelenide = new AddProjectPageSelenide();
         addProjectPageSelenide.addProject(addProject);
@@ -82,35 +52,36 @@ public class DBCaseTest extends BaseTest {
         $(By.xpath("//*[@class = 'message message-success']")).shouldBe(visible).shouldHave(text("Successfully added the new project."));
     }
 
-    @Test(dependsOnMethods = "addProjectTest")
+    @Test(dependsOnMethods = {"loginTest", "addProjectTest"})
     public void addCaseTest() throws InterruptedException {
 
         open("/index.php?/dashboard");
         $(byText(addProject.getName())).click();
         $("#sidebar-cases-add").click();
 
-
         CaseTable caseTable = new CaseTable(dataBaseService);
 
         caseTable.createTable();
-        caseTable.addCase("123asd");
-        caseTable.addCase("UPD123asd");
+        caseTable.addCase("123_asssd", "kfkfkfk");
+        caseTable.addCase("UPD123_asssd", "fffff");
 
         String title = null;
+        String preconditions = null;
 
         ResultSet rs = caseTable.getCaseByID(1);
 
         try {
             while (rs.next()) {
                 title = rs.getString("title");
+                preconditions = rs.getString("preconditions");
 
                 logger.info("titleTestCase: " + title);
+                logger.info("preconditions: " + preconditions);
 
             }
         } catch (SQLException e) {
             logger.error(e.toString());
         }
-
 
         addCase = new CasesSelenide();
         addCase.setTitle(title);
@@ -120,7 +91,6 @@ public class DBCaseTest extends BaseTest {
 
         $(By.xpath("//*[@class = 'message message-success']")).shouldBe(visible);
         $(byText("Add another")).shouldBe(visible);
-
     }
 
     @Test(dependsOnMethods = "addCaseTest")
@@ -137,7 +107,7 @@ public class DBCaseTest extends BaseTest {
             while (rs.next()) {
                 title = rs.getString("title");
 
-                logger.info("titleTestCase: " + title);
+                logger.info("titleCase: " + title);
             }
         } catch (SQLException e) {
             logger.error(e.toString());
@@ -147,7 +117,6 @@ public class DBCaseTest extends BaseTest {
 
         updateCase = new CasesSelenide();
         updateCase.setTitle(title);
-
 
         AddCasesSelenide updateCasePage = new AddCasesSelenide();
         updateCasePage.updateCase(updateCase);

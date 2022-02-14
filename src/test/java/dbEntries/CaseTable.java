@@ -2,8 +2,8 @@ package dbEntries;
 
 import core.DataBaseService;
 import org.testng.log4testng.Logger;
-
 import java.sql.ResultSet;
+
 
 public class CaseTable {
     public static Logger logger = Logger.getLogger(CaseTable.class);
@@ -15,34 +15,37 @@ public class CaseTable {
     }
 
     public void createTable() {
-        logger.info("Создаем таблицу Case");
+        logger.info("Создаем таблицу cases");
 
-        String createTableSQL = "CREATE TABLE Case (" +
+        String createTableSQL = "CREATE TABLE cases (" +
                 "id SERIAL PRIMARY KEY, " +
-                "title CHARACTER VARYING(30), " +  ");";
+                "title CHARACTER VARYING(30), " +
+                "preconditions CHARACTER VARYING(30) " +
+                ");";
 
         dataBaseService.executeSQL(createTableSQL);
     }
 
     public void dropTable() {
-        logger.info("Удаляем таблицу Case");
+        logger.info("Удаляем таблицу cases");
 
-        String dropTableCaseSQL = "DROP TABLE Case;";
+        String dropTableMilestonesSQL = "DROP TABLE cases;";
 
-        dataBaseService.executeSQL(dropTableCaseSQL);
+        dataBaseService.executeSQL(dropTableMilestonesSQL);
     }
 
     public ResultSet getCaseByID(int id) {
-        String sql = "SELECT * FROM Case WHERE id = " + id + ";";
+        String sql = "SELECT * FROM cases WHERE id = " + id + ";";
 
         return dataBaseService.executeQuery(sql);
     }
 
-    public void addCase(String title) {
-        logger.info("Добавляем запись в таблицу Case");
+    public void addCase(String title, String preconditions) {
+        logger.info("Добавляем запись в таблицу cases");
 
-        String insertTableSQL = "INSERT INTO public.Case(" +
-                "VALUES ('" + title + "');";
+        String insertTableSQL = "INSERT INTO public.cases(" +
+                "title, preconditions)" +
+                "VALUES ('" + title + "', '" + preconditions +"');";
 
         dataBaseService.executeSQL(insertTableSQL);
     }
