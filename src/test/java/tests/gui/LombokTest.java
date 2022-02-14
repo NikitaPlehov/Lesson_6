@@ -1,7 +1,7 @@
 package tests.gui;
 
 
-import com.tms.core.ReadProperties;
+
 import models.Project;
 import models.User;
 import org.testng.Assert;

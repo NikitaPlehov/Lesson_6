@@ -48,7 +48,7 @@ public class DBMilestoneTest extends BaseTest {
         ProjectTable projectsTable = new ProjectTable(dataBaseService);
 
         projectsTable.createTable();
-        projectsTable.addProject("AudiDrive12234", "AudiDrive12321234");
+        projectsTable.addProject("Drive412234", "Drive412321234");
 
         String nameProject = null;
         String announcement = null;
@@ -90,7 +90,7 @@ public class DBMilestoneTest extends BaseTest {
         MilestoneTable milestoneTable = new MilestoneTable(dataBaseService);
 
         milestoneTable.createTable();
-        milestoneTable.addMilestone("123Mile_ST1", "123REF1", "123DESC1");
+        milestoneTable.addMilestone("1234Mile_ST1", "123REF1", "123DESC1");
         milestoneTable.addMilestone("UPDATE_123Mile_ST1", "UPDATE_123REF1", "UPDATE_123DESC1");
 
         String nameMilestone = null;

@@ -15,9 +15,9 @@ public class CaseTable {
     }
 
     public void createTable() {
-        logger.info("Создаем таблицу milestones");
+        logger.info("Создаем таблицу Case");
 
-        String createTableSQL = "CREATE TABLE testcase (" +
+        String createTableSQL = "CREATE TABLE Case (" +
                 "id SERIAL PRIMARY KEY, " +
                 "title CHARACTER VARYING(30), " +  ");";
 
@@ -25,24 +25,23 @@ public class CaseTable {
     }
 
     public void dropTable() {
-        logger.info("Удаляем таблицу testcase");
+        logger.info("Удаляем таблицу Case");
 
-        String dropTableMilestonesSQL = "DROP TABLE testcase;";
+        String dropTableCaseSQL = "DROP TABLE Case;";
 
-        dataBaseService.executeSQL(dropTableMilestonesSQL);
+        dataBaseService.executeSQL(dropTableCaseSQL);
     }
 
-    public ResultSet getMilestoneByID(int id) {
-        String sql = "SELECT * FROM testcase WHERE id = " + id + ";";
+    public ResultSet getCaseByID(int id) {
+        String sql = "SELECT * FROM Case WHERE id = " + id + ";";
 
         return dataBaseService.executeQuery(sql);
     }
 
-    public void addTestcase(String title, String preconditions) {
-        logger.info("Добавляем запись в таблицу testcase");
+    public void addCase(String title) {
+        logger.info("Добавляем запись в таблицу Case");
 
-        String insertTableSQL = "INSERT INTO public.testcase(" +
-                "title, preconditions)" +
+        String insertTableSQL = "INSERT INTO public.Case(" +
                 "VALUES ('" + title + "');";
 
         dataBaseService.executeSQL(insertTableSQL);

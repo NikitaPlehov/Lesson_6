@@ -27,6 +27,7 @@ public class BaseTest {
         @BeforeTest
         public void setupConnection() {
             org.apache.log4j.BasicConfigurator.configure();
+            dataBaseService = new DataBaseService();
             Configuration.baseUrl = url;
             Configuration.browser = "chrome";
             Configuration.startMaximized = true;
@@ -41,4 +42,5 @@ public class BaseTest {
         public void closeConnection() {
             dataBaseService.closeConnection();
         }
+
 }

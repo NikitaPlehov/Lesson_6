@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 
-
 public class DataBaseService {
     public static Logger logger = Logger.getLogger(DataBaseService.class);
 
