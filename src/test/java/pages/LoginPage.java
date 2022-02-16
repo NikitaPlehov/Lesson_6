@@ -19,6 +19,10 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    public LoginPage(WebDriver driver, boolean openByURL) {
+        super(driver, openByURL);
+    }
+
     @Override
     protected void openPage() {
         driver.get(BASE_URL + ENDPOINT);
@@ -45,5 +49,14 @@ public class LoginPage extends BasePage {
         getEmailField().sendKeys(user.getEmail());
         getPasswordField().sendKeys(user.getPassword());
         getLoginButton().click();
+    }
+
+    public void login(String username, String password) {
+        User user = User.builder()
+                .email(username)
+                .password(password)
+                .build();
+
+        login(user);
     }
 }

@@ -18,4 +18,8 @@ public class Input {
     public void sendKeys(CharSequence... keysToSend){
         uiElement.sendKeys(keysToSend);
     }
+
+    public boolean isDisplayed(){return uiElement.isDisplayed();}
+
+
 }
