@@ -11,6 +11,7 @@ public class DashboardPage extends BasePage {
     protected By addProjectButtonSelector = By.id("sidebar-projects-add");
     protected By USERNAME = By.className("navigation-username");
 
+
     public DashboardPage(WebDriver driver) {
         super(driver);
     }

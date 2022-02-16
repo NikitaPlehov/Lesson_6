@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="10" configfailurepolicy="skip">
-
-    <listeners>
-        <listener class-name="utils.NGTestListener" />
-    </listeners>
-
-    <test name="Complete test run">
+<suite name="Practice Suite">
+    <test name="Test Basics 2">
         <classes>
-            <class name="RunCucumberTest" />
+            <class name="tests.gui.AllureTest"/>
         </classes>
-    </test>
-
-</suite>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
